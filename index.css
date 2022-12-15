@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html,
+body,
+.all-bg,
+.all-bg table,
+.all-bg td,
+.big-title {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  cursor: default;
+  color: #000;
+  background-color: slategray;
+}
+
+.bg-img {
+  background-image: url(1088031.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+h1,
+h2,
+.large,
+.left {
+  font-family: "Century Gothic", "Lucida Grande", Arial, sans-serif;
+  font-size: 100%;
+  color: #ff6666;
+}
+
+a {
+  text-decoration: none;
+  outline: 0;
+  cursor: pointer;
+  color: #dd6819;
+}
+
+h2 a:hover {
+  text-decoration: underline;
+}
+
+.menu {
+  position: absolute;
+  bottom: 12%;
+  left: 141px;
+  z-index: 60;
+  width: 100%;
+  line-height: 12px;
+}
+
+.menu div {
+  height: 63px;
+  background: rgb(49, 49, 49);
+  font-size: 100%;
+}
+.menu h1 {
+  position: relative;
+  left: -141px;
+  margin-bottom: -63px;
+  width: 140px;
+  opacity: 0.99;
+  font-size: 100%;
+}
+
+h1 a {
+  padding: 41px 10px 10px 0;
+  color: white;
+  background: black 0 -30px repeat-x;
+  font-size: 100%;
+  text-align: right;
+  display: block;
+}
+
+h1 a:hover {
+  background: rgb(70, 70, 70) 0 -30px repeat-x;
+}
+
+.menu ul {
+  float: left;
+  width: 110px;
+}
+
+ul li {
+  list-style: none;
+}
+
+li a {
+  height: 18%;
+  padding-top: 42px;
+  padding-bottom: 9px;
+  padding-left: 10px;
+  font-weight: bold;
+  color: white;
+  display: block;
+  font-size: 100%;
+}
+
+li a:hover {
+  background-color: rgb(70, 70, 70);
+}
+
+.big-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.box {
+  position: absolute;
+  top: 15%;
+  right: 200px;
+  width: 500px;
+  padding-bottom: 100px;
+}
+
+.box div {
+  line-height: 1.5em;
+  background: #fff;
+  padding: 20px 30px;
+}
+
+.box div a {
+  text-decoration: underline;
+}
+
+.large {
+  text-align: right;
+  top: 20%;
+  right: 120px;
+  font-size: 100%;
+}
+
+.left {
+  text-align: left;
+  left: auto;
+  right: 180px;
+  font-size: 100%;
+}
+
+.large h1 {
+  font-size: 450%;
+}
+
+.large h2 {
+  font-size: 110%;
+  color: #ffcccc;
+}
+
+@media only screen and (max-width: 700px) {
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+
+  .box {
+    top: 10%;
+    left: 10px;
+    width: 95vw;
+  }
+}
+
+/* FOOTER */
+
+.row.footer {
+  flex-grow: 1;
+  flex-basis: fit-content;
+  /* background: #11161b; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-social-icons {
+  width: fit-content;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.social-icon {
+  color: #e4e7eb;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  background-color: #38434d;
+  padding: 0px;
+  border-radius: 3px;
+}
+
+#icon {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 3px;
+}
+
+.social-icons a {
+  color: #e4e7eb;
+  text-decoration: none;
+}
+
+.fa-instagram:hover {
+  color: #fff;
+  vertical-align: middle;
+  background-color: #d6249f;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+.fa-twitter:hover {
+  background-color: #00aced;
+}
+
+.fa-youtube:hover {
+  color: #e92323;
+  background-color: #11161b;
+}
+
+.fa-github:hover {
+  color: #803fe2;
+  background-color: #11161b;
+}
+
+.fa-apple:hover {
+  background-color: #7d7d7d;
+}
+
+.fa-stack-overflow:hover {
+  background-color: #ff9900;
+}
+
+.ai-google-scholar-square:hover {
+  background-color: #4285f4;
+}
+
+.fa-soundcloud:hover {
+  color: #fff;
+  vertical-align: middle;
+  background-color: #d6249f;
+  background: linear-gradient(#ff7700, #ff3801);
+}
+
+.fa-envelope:hover {
+  color: rgb(206, 92, 26);
+  background-color: #11161b;
+}
+
+.fa-spotify:hover {
+  color: #18d359;
+  background-color: #11161b;
+}
+
+.fa-reddit:hover {
+  background-color: #ff5700;
+}
+
+.fa-medium:hover {
+  color: #00ab6c;
+  background-color: #11161b;
+}
+
+.fa-meetup:hover {
+  background-color: #ed1c40;
+}
+
+.fa-telegram:hover {
+  background-color: #0088cc;
+}
+.fa-linkedin:hover {
+  color: #0e8ccf;
+  background-color: #11161b;
+}
