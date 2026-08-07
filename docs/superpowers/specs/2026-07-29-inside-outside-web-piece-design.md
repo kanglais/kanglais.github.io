@@ -51,7 +51,7 @@ Timestamps were computed from the known-linear index↔time mapping (`index / 10
 
 - Same header/nav/footer as other site pages (`art.html` pattern).
 - Title: "Inside, Outside"
-- Artist statement (short, drawn from existing project notes): a year of 2023 blood glucose measurements — every spike, every crash, every 3am alarm — mapped to sound and turned into something you can hear and watch.
+- Artist statement: **written by Kellie, not drafted by the implementer.** Leave a clearly marked placeholder (e.g. an HTML comment `<!-- ARTIST STATEMENT: ask Kellie for final text -->` plus a short visible placeholder paragraph) in the implementation — do not invent statement copy.
 - One link/button: "Enter the piece →" → `./inside-outside/index.html`
 - A back-link to `art.html`
 
@@ -64,7 +64,7 @@ Copied and adapted from `~/liquidgold/visualizer/index.html` + `sketch.js` (sket
 - Same full-bleed black canvas, play button, and particle-flow visual as the existing installation version.
 - `<audio>` src points to the new `soundscape.mp3` excerpt (not the original 5.9-hour file).
 - `glucose.json` fetch points to the new 216-reading excerpt file (not the full-year file).
-- New: a small, subtle credit line — "Inside, Outside — Kellie English" — low-opacity, positioned in a corner, that fades out shortly after playback starts so it doesn't clutter the experience once running.
+- New: a small, subtle credit line — "Inside, Outside — Kellie English" — low-opacity, positioned in a corner. **Stays visible for the entire piece — no fade-out.**
 - `control.html` and its `BroadcastChannel` companion behavior are not copied over — this page is self-contained.
 
 ---
@@ -88,7 +88,7 @@ personalwebsite/
 ## Testing
 
 - No automated test suite for this static site (established convention — same as the rest of `personalwebsite`).
-- Manual verification: open `inside-outside/index.html` locally in a browser, confirm playback starts on tapping play, particle visuals respond distinctly across the three segments (calm → agitated/low-stress-color → high-stress-color), audio and visual finish together, and the credit line fades out correctly.
+- Manual verification: open `inside-outside/index.html` locally in a browser, confirm playback starts on tapping play, particle visuals respond distinctly across the three segments (calm → agitated/low-stress-color → high-stress-color), audio and visual finish together, and the credit line remains visible throughout (no fade-out).
 - Confirm navigation end-to-end: `index.html` → `art.html` → `inside-outside.html` → `inside-outside/index.html`, and back-links work.
 - Confirm final `soundscape.mp3` file size is reasonable for a static site (~65s at typical mp3 bitrate should be roughly 1-2MB, well within git/GitHub Pages norms) before committing.
 
@@ -98,8 +98,8 @@ personalwebsite/
 
 - [ ] `index.html`'s "liminal echoes" card links to `art.html`
 - [ ] `art.html`'s "liminal echoes" card links to `inside-outside.html`
-- [ ] `inside-outside.html` shows the artist statement and links into the piece
+- [ ] `inside-outside.html` shows the artist statement placeholder (final text supplied by Kellie separately) and links into the piece
 - [ ] `inside-outside/index.html` plays the ~65s excerpt with synced particle visuals, ending with both audio and visual data exhausted together
-- [ ] Credit line is visible briefly, then fades
+- [ ] Credit line is visible for the entire piece, no fade-out
 - [ ] `soundscape.mp3` excerpt file size confirmed reasonable (not the 510MB source)
 - [ ] Full navigation path manually verified in a browser
