@@ -215,30 +215,14 @@ main {
   border-color: var(--rose);
 }
 
-.art-image-placeholder {
-  width: 100%;
-  aspect-ratio: 4/3;
-  background: #1a1a22;
-  border: 1px dashed var(--card-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-}
-
-.card--art .art-image-placeholder {
-  aspect-ratio: 4/3;
-}
-
 .art-image {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1/1;
   object-fit: cover;
   display: block;
   border: 1px solid var(--card-border);
 }
+
 
 /* llc card */
 
