@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inside, Outside — Kellie English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #040404; overflow: hidden; }
+    canvas { display: block; }
+    #statement {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      max-width: 48rem;
+      padding: 0 2rem;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #d4a017;
+      transition: opacity 0.8s ease;
+    }
+    #statement.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #ui {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    #play-btn {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #d4a017;
+      font-size: 1.5rem;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #play-btn:hover { background: rgba(255,255,255,0.18); }
+    #credit {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.5rem;
+      z-index: 10;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+</head>
+<body>
+  <audio id="soundscape" src="soundscape.mp3" preload="metadata"></audio>
+  <div id="statement">
+    <p>Inside, Outside is, quite literally, an homage to the highs and lows of life, represented through the data taken directly from the artist's glucose monitor. The artist's intention is to try to demonstrate the lens through which she has no choice but to view the world, emulating the fluctuations in blood glucose that she experiences that, in turn, impacts everything she sees, feels, and experiences.</p>
+  </div>
+  <div id="ui">
+    <button id="play-btn" onclick="togglePlay()">▶</button>
+  </div>
+  <div id="credit">Inside, Outside — Kellie English</div>
+  <script src="sketch.js"></script>
+  <script>
+    document.getElementById('soundscape').addEventListener('play', () => {
+      document.getElementById('statement').classList.add('hidden');
+    }, { once: true });
+  </script>
+</body>
+</html>

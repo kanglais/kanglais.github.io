@@ -41,9 +41,9 @@ The web excerpt is a ~65-second montage built from three non-adjacent segments o
 
 Timestamps were computed from the known-linear index↔time mapping (`index / 101976 * 21256.908` seconds); the low/high index ranges were reused from pre-existing "extreme event" markers (`~/liquidgold/tidal/low_event.json`, `high_event.json`) created for the earlier Tidal version of this piece.
 
-**Audio build:** cut the three segments from the source mp3 with `ffmpeg`, concatenate in order with a 0.3-second crossfade (`acrossfade`) at each of the two splice points, export as `inside-outside/soundscape.mp3`. Note the crossfades shorten the final excerpt by ~0.6s total (two 0.3s overlaps) relative to the sum of the three segment lengths — the corresponding `glucose.json` data array is not shortened to match (216 readings stays exact), since a sub-second proportional drift is inaudible/invisible in this abstract visualization.
+**Audio build:** cut the three segments from the source mp3 with `ffmpeg`, concatenate in order with a 0.3-second crossfade (`acrossfade`) at each of the two splice points, export as `inside-outside/soundscape.mp3`. Note the crossfades shorten the final excerpt by ~0.6s total (two 0.3s overlaps) relative to the sum of the three segment lengths — the corresponding `glucose.json` data array is not shortened to match (312 readings stays exact), since a sub-second proportional drift is inaudible/invisible in this abstract visualization.
 
-**Data build:** construct a new `inside-outside/glucose.json` containing exactly `readings[53352:53424] + readings[67780:67851] + readings[92891:93058]` (216 total readings), in the same `{"readings": [...]}` shape as the source `glucose.json` so `sketch.js` needs no changes.
+**Data build:** construct a new `inside-outside/glucose.json` containing exactly `readings[53352:53424] + readings[67780:67852] + readings[92891:93059]` (312 total readings, using inclusive index ranges matching the low/high event markers), in the same `{"readings": [...]}` shape as the source `glucose.json` so `sketch.js` needs no changes.
 
 ---
 
@@ -63,7 +63,7 @@ Copied and adapted from `~/liquidgold/visualizer/index.html` + `sketch.js` (sket
 
 - Same full-bleed black canvas, play button, and particle-flow visual as the existing installation version.
 - `<audio>` src points to the new `soundscape.mp3` excerpt (not the original 5.9-hour file).
-- `glucose.json` fetch points to the new 216-reading excerpt file (not the full-year file).
+- `glucose.json` fetch points to the new 312-reading excerpt file (not the full-year file).
 - New: a small, subtle credit line — "Inside, Outside — Kellie English" — low-opacity, positioned in a corner. **Stays visible for the entire piece — no fade-out.**
 - `control.html` and its `BroadcastChannel` companion behavior are not copied over — this page is self-contained.
 
@@ -79,7 +79,7 @@ personalwebsite/
   inside-outside/
     index.html         (new, adapted from liquidgold/visualizer/index.html)
     sketch.js           (copied as-is from liquidgold/visualizer/sketch.js)
-    glucose.json         (new, 216-reading montage)
+    glucose.json         (new, 312-reading montage)
     soundscape.mp3       (new, ~65s ffmpeg-built excerpt)
 ```
 
